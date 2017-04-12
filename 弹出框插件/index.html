@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0px;
+			margin: 0px;
+			list-style: none;
+		}
+		.mask{
+			width: 1350px;
+			height: 630px;
+			background: #B2B2B2;
+			position: relative;
+		}
+		.tan{
+			width: 400px;
+			height: 180px;
+			border:1px solid #ccc;
+			border-radius: 20px;
+			background: #fff;
+			position: relative;
+			box-shadow: 1px 2px 3px #000; 
+			position: absolute;
+			left: 500px;
+			top: 210px;
+		}
+		.tann{
+			width: 400px;
+			height: 180px;
+			border:1px solid #ccc;
+			border-radius: 20px;
+			background: #cc9900;
+			position: relative;
+			box-shadow: 1px 2px 3px #000; 
+			position: absolute;
+			left: 500px;
+			top: 210px;
+		}
+		.cha{
+			width: 30px;
+			height: 30px;
+			border-radius: 15px;
+			background: #000;
+			box-shadow: 1px 2px 2px #fff; 
+			line-height: 30px;
+			text-align: center;
+			position: absolute;
+			right: -10px;
+			top: -10px;
+		}
+		.cha>a{
+			font-size: 25px;
+			cursor: pointer;
+			color: #fff;
+		}
+		.h{
+			width: 360px;
+			height: 35px;
+			margin: 0 auto;
+			border-bottom: 2px solid #CCCCCC;
+			line-height: 38px;
+			color: #575757;
+		}
+		.t{
+			width: 350px;
+			height:70px;
+			line-height: 70px;
+			font-size: 25px;
+			color: #575757;
+			padding-left: 20px;
+			margin-top: 5px;
+		}
+		.bot{
+			width: 350px;
+			height: 30px;
+			margin-top: 5px;
+			position: relative;
+		}
+		.bot>a{
+			width: 70px;
+			height: 30px;
+			background: #66cccc;
+			display: inline-block;
+			border-radius: 5px;
+			color: #fff;
+			margin-left: 80px;
+			text-align: center;
+			line-height: 30px;
+			font-weight: bolder;
+			cursor: pointer;
+		}
+		.aa{
+			margin-left: 170px;
+			width: 70px;
+			height: 30px;
+			background: #33ff66;
+			display: inline-block;
+			border-radius: 5px;
+			color: #fff;
+			text-align: center;
+			line-height: 30px;
+			font-weight: bolder;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn1">弹出confirm框</button>
+	<button id="btn2">弹出alert框</button>
+	<!-- <div class='mask'>
+		<div class="tan">
+			<div class="cha"><a>&times;</a></div>
+			<h3 class='h'>信息</h3>
+			<div class="t"><span>你确定要删除吗？</span></div>
+			<div class="bot"><a class="btn" id='btn1'>确定</a><a class="btn" id='btn2'>取消</a></div>
+		</div>
+	</div> -->
+	<script src='jquery-1.8.3.min.js'></script>
+	<script src='jquery.dialog.js'></script>
+	<script>
+		$('#btn1').on('click',function(){
+			$.dialog.confirm({
+				masg:'信息',
+				title:'您确定要删除吗？',
+				button:['确认','取消'],
+				yes:function(){alert('这是确定按钮，你确定取消了')},
+				no:function(){alert('这是取消按钮，你取消了')},
+				isDarg:true
+			})
+		})
+		$('#btn2').on('click',function(){
+			$.dai.alert({
+				masg:'Hello',
+				title:'您确定要删除这些东西吗？',
+				isDarg:true,
+				btn:'确认'
+			})
+		})
+
+	</script>
+</body>
+</html>
